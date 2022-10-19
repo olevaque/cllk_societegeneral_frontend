@@ -1,0 +1,41 @@
+
+
+<div class="bg-cartier-gradient">
+
+    <div class="container h-header">
+        <div class="row h-100">
+    
+            <div class="col-6 p-3">
+                <div class="logo" [routerLink]="['/']"></div>
+            </div>
+    
+            <div class="col-6 d-flex align-items-center justify-content-end">
+                <div class="d-flex flex-row align-items-center" (click)="setFullscreen()">
+                    <div class="typo-standard-black me-2">Plein écran</div>
+                    <img class="picto-big" src="assets/images/unity/fullscreen.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+
+            <div class="position-relative">
+
+                <!-- Chargement -->
+                <div *ngIf="isLoading" class="loading d-flex flex-column align-items-center justify-content-center">
+                    <img src="assets/images/LogoSmall.png" width="301px" height="65px" />
+                    <div class="spinner-border text-primary my-3" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <div class="typo-standard-black">{{ loadProgress }} %</div>
+                </div>
+            </div>
+              
+        </div>
+    </div>
+</div>

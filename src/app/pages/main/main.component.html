@@ -1,0 +1,29 @@
+
+<!--
+<div class="position-relative">
+    <div class="position-absolute top-0 start-0 w-100" style="pointer-events: none; z-index: 10000;">
+        <div class="container">
+            <div class="row" style="height: 5000vh;">
+                <div class="col bg-debug-red"><div class="h-100 bg-debug-green"></div></div>
+                <div class="col bg-debug-red"><div class="h-100 bg-debug-green"></div></div>
+                <div class="col bg-debug-red"><div class="h-100 bg-debug-green"></div></div>
+                <div class="col bg-debug-red"><div class="h-100 bg-debug-green"></div></div>
+                 
+                <div class="col bg-debug-red"><div class="h-100 bg-debug-green"></div></div>
+                <div class="col bg-debug-red"><div class="h-100 bg-debug-green"></div></div>
+                <div class="col bg-debug-red"><div class="h-100 bg-debug-green"></div></div>
+                <div class="col bg-debug-red"><div class="h-100 bg-debug-green"></div></div>
+                 
+                <div class="col bg-debug-red"><div class="h-100 bg-debug-green"></div></div>
+                <div class="col bg-debug-red"><div class="h-100 bg-debug-green"></div></div>
+                <div class="col bg-debug-red"><div class="h-100 bg-debug-green"></div></div>
+                <div class="col bg-debug-red"><div class="h-100 bg-debug-green"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+<header *ngIf="useHeader" [username]="username" [userConnected]="isLogIn" (onLogoutClicked)="onLogoutClicked()"></header>
+
+<router-outlet></router-outlet>

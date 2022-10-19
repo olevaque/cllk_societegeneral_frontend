@@ -1,0 +1,23 @@
+
+<div class="header">
+
+    <div class="container h-header">
+        <div class="row h-100">
+    
+            <div class="col p-3">
+                <div class="logo" [routerLink]="['/']"></div>
+            </div>
+    
+            <div *ngIf="userConnected" class="col d-flex align-items-center justify-content-end">
+                <div class="typo-standard-black">{{ username }}</div>
+                <img class="ms-3" src="assets/images/Auth.png" />
+
+                <div class="separator mx-4"></div>
+
+                <img src="assets/images/Disconnect.png" (click)="onLogOutClick()" />
+            </div>
+    
+        </div>
+    </div>
+
+</div>

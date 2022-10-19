@@ -1,0 +1,138 @@
+
+@import 'bootstrap/scss/_functions.scss';
+@import 'bootstrap/scss/_variables.scss';
+@import 'bootstrap/scss/_mixins.scss';
+
+@import "assets/styles/colors.scss";
+
+.item
+{
+    display: flex;
+    padding: .5rem .75rem;
+
+    &:not(.collapsed)
+    {
+        &::after
+        {
+            transform: rotate(-180deg);
+        }
+    }
+    &::after
+    {
+        margin-left: auto;
+        content: "";
+        width: 1.25rem;
+        height: 1.25rem;
+        background-size: 1.25rem;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+    }
+}
+
+.item-header
+{
+    display: flex;
+    padding: .5rem .75rem;
+    
+    &::after
+    {
+        margin-left: auto;
+        content: "";
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+}
+
+.btn-filter
+{
+    display: flex;
+    font-family: 'Lato-Bold';
+    font-size: 1rem;
+
+    background-color: transparent;
+    border: 1px solid #C2C2C2;
+    letter-spacing: .1rem;
+    
+    &::after
+    {
+        margin-left: .75rem;
+        content: "";
+        width: 1.25rem;
+        height: 1.25rem;
+        background-size: 1.25rem;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+    }
+}
+
+.form-width
+{
+    width: 50%;
+}
+.panel-filter
+{
+    background-color: $sg-red;
+    border: 1px solid #C2C2C2;
+    color: #000 !important;
+}
+.min-width-txt
+{
+    width: 12rem;
+}
+.mat-datepicker-toggle
+{
+    color: white;
+}
+
+.sess-name
+{
+    width: 30%;
+}
+.sess-date
+{
+    width: 20%;
+}
+.sess-animator
+{
+    width: 20%;
+}
+.sess-score
+{
+    width: 10%;
+}
+.sess-record
+{
+    width: 10%;
+}
+.sess-control
+{
+    width: 10%;
+}
+
+@include media-breakpoint-down(lg)
+{
+    .sess-name
+    {
+        width: 60%;
+    }
+    .sess-date
+    {
+        width: 20%;
+    }
+    .sess-animator
+    {
+        width: 0;
+    }
+    .sess-score
+    {
+        width: 0%;
+    }
+    .sess-record
+    {
+        width: 0%;
+    }
+    .sess-control
+    {
+        width: 20%;
+    }
+}

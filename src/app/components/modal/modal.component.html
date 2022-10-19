@@ -1,0 +1,8 @@
+
+<div mat-dialog-title *ngIf="data.title">{{ data.title }}</div>
+<div mat-dialog-content  *ngIf="data.content">{{ data.content }}</div>
+
+<mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="false" class="me-2">Annuler</button>
+    <button mat-button [mat-dialog-close]="true">Continuer</button>
+</mat-dialog-actions>

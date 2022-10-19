@@ -1,0 +1,53 @@
+    
+<form [formGroup]="createSessionForm">
+
+<div class="container">
+
+    <!-- ROW: Titre / Créer session -->
+    <div class="row my-5">
+        <div class="col"></div>
+        <div class="col">
+            <div class="d-flex justify-content-center align-items-center text-center">
+                <div class="typo-title">Créer une session</div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+
+    <div class="row">
+        <div class="col offset-2">
+
+            <div class="">
+                <div class="typo-standard-black mb-2">Nom de la session* :</div>
+                <input class="nameSession" id="nameSession" formControlName="name">
+                <div class="color-error" *ngIf="submittedForm && form['name'].errors">Nom de la session obligatoire</div>
+            </div>
+
+        </div>
+
+        <div class="col">
+
+            <div class="">
+                <div class="typo-standard-black mb-2">Choix de la session* :</div>
+                <button (click)="selectVersion(true)" [ngClass]="{ 'btn-red': form['isVersionA'].value == true, 'btn-white': form['isVersionA'].value == false }">Version A</button>
+                <button (click)="selectVersion(false)" [ngClass]="{ 'btn-red': form['isVersionA'].value == false, 'btn-white': form['isVersionA'].value == true }" class="ms-3">Version B</button>
+                <div class="color-error" *ngIf="submittedForm && form['isVersionA'].errors">{{ form['isVersionA'].errors }}</div>
+            </div>
+
+        </div>
+        
+        <div class="row my-5">
+            <div class="col">
+
+                <div class="d-flex justify-content-center">
+                    <button class="btn-black" (click)="onCreateSessionSubmit()">Créer une session</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</form>

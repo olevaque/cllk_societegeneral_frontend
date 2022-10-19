@@ -1,0 +1,52 @@
+.webgl-content * {border: 0; margin: 0; padding: 0}
+.webgl-content {position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
+
+.webgl-content .logo, .progress {position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
+.webgl-content .logo {background: url('../../../assets/images/unity/progressLogo.Light.png') no-repeat center / contain; width: 154px; height: 130px;}
+.webgl-content .progress {height: 18px; width: 141px; margin-top: 90px;}
+.webgl-content .progress .empty {background: url('../../../assets/images/unity/progressEmpty.Light.png') no-repeat right / cover; float: right; width: 100%; height: 100%; display: inline-block;}
+.webgl-content .progress .full {background: url('../../../assets/images/unity/progressFull.Light.png') no-repeat left / cover; float: left; width: 0%; height: 100%; display: inline-block;}
+
+.webgl-content .logo.Dark {background-image: url('../../../assets/images/unity/progressLogo.Dark.png');}
+.webgl-content .progress.Dark .empty {background-image: url('../../../assets/images/unity/progressEmpty.Dark.png');}
+.webgl-content .progress.Dark .full {background-image: url('../../../assets/images/unity/progressFull.Dark.png');}
+
+.footer {margin-top: 5px; height: 38px; line-height: 38px; font-family: Helvetica, Verdana, Arial, sans-serif; font-size: 18px;}
+.footer .webgl-logo, .title, .fullscreen {height: 100%; display: inline-block; background: transparent center no-repeat;}
+.footer .title {margin-right: 10px; float: right;}
+.footer .fullscreen {background-image: url('../../../assets/images/unity/fullscreen.png'); width: 38px; float: right;}
+
+.h-min
+{
+    min-height: 8rem;
+}
+
+.unity-container * 
+{
+    border: 0; margin: 0; padding: 0
+}
+.unity-container
+{
+    max-height: calc(100vh - 10rem);
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.unity-container.active
+{
+    opacity: 1;
+}
+
+.video
+{
+    width: 100%;
+    height: 100%;
+}
+
+.loading
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-152px, -33px);
+}

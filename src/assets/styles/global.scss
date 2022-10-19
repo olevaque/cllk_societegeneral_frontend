@@ -1,0 +1,104 @@
+
+@import "colors.scss";
+@import "typos.scss";
+
+body
+{
+    font-family: 'SourceSansPro-Regular' !important;
+    font-size: 1rem !important;
+    color: black !important;
+    height: 100%;
+}
+
+input
+{
+    background-color: transparent !important;
+    border: 1px solid black !important;
+    padding: .5rem 1rem;
+}
+
+.btn-red
+{
+    font-family: 'SourceSansPro-Bold' !important;
+    font-size: 1rem !important;
+    color: white !important;
+
+    background-color: $sg-red;
+    border: 1px solid $sg-red !important;
+    padding: .5rem 1rem;
+}
+
+.btn-black
+{
+    font-family: 'SourceSansPro-Bold' !important;
+    font-size: 1rem !important;
+    color: white !important;
+
+    background-color: black;
+    border: 1px solid black !important;
+    padding: .5rem 1rem;
+}
+
+.btn-white
+{
+    font-family: 'SourceSansPro-Bold' !important;
+    font-size: 1rem !important;
+    color: black !important;
+
+    background-color: white;
+    border: 1px solid black !important;
+    padding: .5rem 1rem;
+}
+
+.overflow-ellipsis
+{
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.border-light-gray
+{
+    border: 1px solid $gray-light;
+}
+
+.input-invalid
+{
+    border-bottom: 1px solid red !important;
+}
+
+.close-cross
+{
+    background-image: url("../images/Cross.png");
+    width: 2rem;
+    height: 2rem;
+}
+
+.bg-cartier-gradient
+{
+    background: linear-gradient(237.31deg, #2075a4 21.44%, #0f1c28 90.03%);
+}
+
+.h-header
+{
+    height: 4rem;
+}
+
+.logo
+{
+    height: 100%;
+    background: url("../images/LogoSmall.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left center;
+}
+
+.picto-std
+{
+    width: 1.2rem;
+    height: auto;
+}
+.picto-big
+{
+    width: 2rem;
+    height: auto;
+}

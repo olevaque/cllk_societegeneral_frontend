@@ -1,0 +1,16 @@
+{
+"companyName": "Collock",
+"productName": "Waterair",
+"productVersion": "1.0",
+"dataUrl": "game.data.unityweb",
+"wasmCodeUrl": "game.wasm.code.unityweb",
+"wasmFrameworkUrl": "game.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Light",
+"backgroundColor": "#0C4B8A",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.21f1"
+}
