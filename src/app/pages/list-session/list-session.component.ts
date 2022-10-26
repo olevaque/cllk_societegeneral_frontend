@@ -18,7 +18,6 @@ var FileSaver = require('file-saver');
 export class ListSessionComponent implements OnInit
 {
     sessionList: Session[] = [];
-    averageScore: number = 0;
     
     filterForm: UntypedFormGroup;
     filterPanelOpen: boolean = false;
@@ -60,8 +59,7 @@ export class ListSessionComponent implements OnInit
 
     onShareSessionClick(session: Session)
     {
-        console.log("Oui!!!");
-        this.clipboard.copy(location.origin + "/Game/" + session.uuid);
+        this.clipboard.copy(location.origin + "/Session/" + session.uuid);
         this.snackBar.open("Votre lien a été copié dans le presse papier !", undefined, { duration: 2000 } );
     }
 
@@ -80,26 +78,6 @@ export class ListSessionComponent implements OnInit
         this.apollo.query<Sessions>({ query: FIND_SESSIONS, variables: { filter: filterAttributs }}).subscribe(result =>
         {
             this.sessionList = result.data.sessions;
-
-            // Calcul du score
-            this.averageScore = 0;
-            let nbSessionCompleted = 0;
-            this.sessionList.forEach(session =>
-            {
-                if (session.isGameCompleted)
-                {
-                    nbSessionCompleted++;
-                    
-                    this.averageScore += session.score;
-                }
-            });
-
-            if (nbSessionCompleted > 0)
-            {
-                this.averageScore /= nbSessionCompleted;
-                this.averageScore = Math.floor(this.averageScore);
-            }
-
         }, (err) => {
             console.log(err);
         });
@@ -156,38 +134,6 @@ export class ListSessionComponent implements OnInit
         });
     }
 
-    sortByTime(): void
-    {
-        this.filterAscDesc = !this.filterAscDesc;
-        this.sessionList = this.sessionList.sort((s1: Session, s2: Session) => 
-        { 
-            if (this.filterAscDesc)
-            {
-                return s1.score - s2.score;
-            }
-            else
-            {
-                return s2.score - s1.score;
-            }
-        });
-    }
-
-    sortByScore(): void
-    {
-        this.filterAscDesc = !this.filterAscDesc;
-        this.sessionList = this.sessionList.sort((s1: Session, s2: Session) => 
-        { 
-            if (this.filterAscDesc)
-            {
-                return s1.score - s2.score;
-            }
-            else
-            {
-                return s2.score - s1.score;
-            }
-        });
-    }
-    
     sortByState(): void
     {
         this.filterAscDesc = !this.filterAscDesc;
@@ -214,13 +160,12 @@ export class ListSessionComponent implements OnInit
     exportCsvData(): void
     {
         // Header
-        let csv: string = "Session;Animateur;Score;Termine;Commentaire;Note;Détails\r\n";
+        let csv: string = "Session;Animateur;Termine;Commentaire;Note;Détails\r\n";
         this.sessionList.forEach(session =>
         {
             // Game info
             csv += (session.name ? session.name.trim() : "-") + ";";
             csv += (session.animator ? session.animator.username : "-") + ";";
-            csv += (session.score ? session.score : "-") + ";";
             csv += (session.isGameCompleted ? "Oui" : "Non") + ";";
             csv += (session.rates.length === 0 ? "Aucun commentaire" : session.rates.length + " commentaire(s)");
             csv += "\r\n";

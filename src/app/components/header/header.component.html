@@ -16,6 +16,11 @@
 
                 <img src="assets/images/Disconnect.png" (click)="onLogOutClick()" />
             </div>
+
+            <div *ngIf="useFullscreenBtn" class="col d-flex flex-row align-items-center justify-content-end" (click)="onFullscreenClick()">
+                <div class="typo-standard-black me-2">Plein écran</div>
+                <img class="picto-big" src="assets/images/unity/fullscreen.png">
+            </div>
     
         </div>
     </div>

@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class MainComponent implements OnInit, OnDestroy
 {
-    useHeader: boolean = false;
+    useFullscreen: boolean = false;
     isLogIn: boolean = false;
     username: string = '';
 
@@ -33,7 +33,8 @@ export class MainComponent implements OnInit, OnDestroy
         // S'abonne a la route pour détecter les changements de route
         this.routeChangeSubscription = this.router.events.subscribe((val) =>
         {
-            this.useHeader = true;// this.router.url === "/" + Route.ListSession || this.router.url === "/" + Route.CreateSession;
+            this.useFullscreen = this.router.url.includes(Route.Session);
+            console.log(this.useFullscreen +" " + this.router.url);
         });
     }
     

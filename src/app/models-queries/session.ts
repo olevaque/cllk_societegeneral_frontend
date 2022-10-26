@@ -21,9 +21,6 @@ export interface Session
     isGameCompleted: boolean;
     gameStartTime: string;
 
-    score: number;
-    timeSpent: string;
-
     displayedElapsedTime: string;
 }
 
@@ -47,7 +44,6 @@ query Sessions($filter: JSON!)
         isGameStarted
         isGameCompleted
         gameStartTime
-        score
         
         animator
         {
