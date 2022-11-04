@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <!-- Filter -->
+    <!-- Filter
     <div class="row my-4">
         <div class="col">
 
@@ -38,6 +38,7 @@
             <button *ngIf="authService.CurrentUserIsAdmin" (click)="exportCsvData()">Exporter</button>
         </div>
     </div>
+     -->
 
     <!-- ROW: Aucune session -->
     <div *ngIf="sessionList.length === 0" class="row">
@@ -53,7 +54,9 @@
             <!-- Entete Sessions -->
             <div class="item-header text-center">
                 <div class="overflow-ellipsis typo-small-red sess-name">Session</div>
-                <div (click)="sortByState()" class="overflow-ellipsis typo-small-red sess-control">Play</div>
+                <div class="overflow-ellipsis typo-small-red sess-version">Version</div>
+                <div (click)="sortByState()" class="overflow-ellipsis typo-small-red sess-control">Status</div>
+                <div class="overflow-ellipsis typo-small-red sess-icons"></div>
             </div>
 
             <!-- Liste Sessions-->
@@ -65,26 +68,28 @@
                         <div class="item collapsed text-center align-items-center" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + i" [attr.aria-controls]="'collapse' + i">
                         
                             <div class="overflow-ellipsis sess-name d-flex flex-row justify-content-center align-items-center">{{ session.name ? session.name : '-' }}</div>
+                            <div class="overflow-ellipsis sess-version d-flex flex-row justify-content-center align-items-center">{{ session.isVersionA ? 'Version A' : 'Version B' }}</div>
                             <div class="overflow-ellipsis typo-standard-black sess-control">
                                 <img *ngIf="!session.isSessionStarted && !session.isGameCompleted" class="picto-std" src="assets/images/Play.png" (click)="onStartSessionClick(session.id)" />
                                 <div *ngIf="session.isGameCompleted">Terminé</div>
                                 <div *ngIf="session.isSessionStarted && !session.isGameCompleted">En cours</div>
                             </div>
-                            <div class="">
+                            <div class="sess-icons">
                                 <img class="picto-std" src="assets/images/Share.png" (click)="onShareSessionClick(session)" />
+                                <img class="picto-std ms-3" src="assets/images/Spectator.png" (click)="onShareSessionSpectatorClick(session)" />
                             </div>
             
                         </div>
             
                     </div>
-                    <div [attr.id]="'collapse' + i" class="collapse" data-bs-parent="#accordion-session">
+                    <!--<div [attr.id]="'collapse' + i" class="collapse" data-bs-parent="#accordion-session">
                         <div class="d-flex flex-column align-items-center text-center pb-2">
                             <ng-container *ngIf="session.isGameCompleted">
                                 <div class="d-flex justify-content-between"><span class="me-3 typo-small-red">Temps écoulé :</span><span class="typo-small-red">{{ session.displayedElapsedTime }}</span></div>
                             </ng-container>
                             <div class="typo-small-red" *ngIf="!session.isGameCompleted">Cette session n'est pas terminée.</div>
                         </div>
-                    </div>
+                    </div>-->
                 </ng-container>
 
             </div>

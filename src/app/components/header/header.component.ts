@@ -8,7 +8,6 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class HeaderComponent
 {
     @Input() userConnected: boolean = false;
-    @Input() useFullscreenBtn: boolean = false;
     
     @Input() username: string = '';
     @Output() onLogoutClicked = new EventEmitter();
@@ -17,10 +16,5 @@ export class HeaderComponent
     onLogOutClick()
     {
         this.onLogoutClicked.emit();
-    }
-    
-    onFullscreenClick()
-    {
-        this.onFullscreenClicked.emit();
     }
 }

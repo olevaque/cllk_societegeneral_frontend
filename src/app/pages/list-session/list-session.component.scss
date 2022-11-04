@@ -9,7 +9,7 @@
 {
     display: flex;
     padding: .5rem .75rem;
-
+/*
     &:not(.collapsed)
     {
         &::after
@@ -27,6 +27,7 @@
         background-repeat: no-repeat;
         background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
     }
+*/
 }
 
 .item-header
@@ -86,52 +87,36 @@
 
 .sess-name
 {
-    width: 30%;
+    width: 40%;
 }
-.sess-date
+.sess-version
 {
     width: 20%;
-}
-.sess-animator
-{
-    width: 20%;
-}
-.sess-score
-{
-    width: 10%;
-}
-.sess-record
-{
-    width: 10%;
 }
 .sess-control
 {
-    width: 10%;
+    width: 20%;
+}
+.sess-icons
+{
+    width: 20%;
 }
 
 @include media-breakpoint-down(lg)
 {
     .sess-name
     {
-        width: 60%;
+        width: 40%;
     }
-    .sess-date
+    .sess-version
     {
         width: 20%;
     }
-    .sess-animator
-    {
-        width: 0;
-    }
-    .sess-score
-    {
-        width: 0%;
-    }
-    .sess-record
-    {
-        width: 0%;
-    }
     .sess-control
+    {
+        width: 20%;
+    }
+    .sess-icons
     {
         width: 20%;
     }

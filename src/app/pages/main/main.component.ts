@@ -1,7 +1,7 @@
 import { Route } from '@/models-queries/route';
 import { AuthenticationService } from '@/services/authentication.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class MainComponent implements OnInit, OnDestroy
 {
-    useFullscreen: boolean = false;
+    headerDisable: boolean = false;
     isLogIn: boolean = false;
     username: string = '';
 
@@ -33,8 +33,10 @@ export class MainComponent implements OnInit, OnDestroy
         // S'abonne a la route pour détecter les changements de route
         this.routeChangeSubscription = this.router.events.subscribe((val) =>
         {
-            this.useFullscreen = this.router.url.includes(Route.Session);
-            console.log(this.useFullscreen +" " + this.router.url);
+            if (val instanceof NavigationEnd)
+            {
+                this.headerDisable = this.router.url.includes("/" + Route.Session + "/");
+            }
         });
     }
     

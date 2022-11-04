@@ -16,6 +16,7 @@ export interface Session
     animator: User;
     rates: Rate[];
 
+    isVersionA: boolean;
     isSessionStarted: boolean;
     isGameStarted: boolean;
     isGameCompleted: boolean;
@@ -40,6 +41,7 @@ query Sessions($filter: JSON!)
             comment
         }
 
+        isVersionA
         isSessionStarted
         isGameStarted
         isGameCompleted

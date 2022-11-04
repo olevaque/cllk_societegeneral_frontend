@@ -24,6 +24,6 @@
 </div>
 -->
 
-<header [username]="username" [userConnected]="isLogIn" [useFullscreenBtn]="useFullscreen" (onLogoutClicked)="onLogoutClicked()"></header>
+<header *ngIf="!headerDisable" [username]="username" [userConnected]="isLogIn" (onLogoutClicked)="onLogoutClicked()"></header>
 
 <router-outlet></router-outlet>

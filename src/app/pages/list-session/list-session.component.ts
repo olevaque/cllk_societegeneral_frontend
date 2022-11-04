@@ -57,10 +57,16 @@ export class ListSessionComponent implements OnInit
         });
     }
 
-    onShareSessionClick(session: Session)
+    onShareSessionClick(session: Session): void
     {
         this.clipboard.copy(location.origin + "/Session/" + session.uuid);
-        this.snackBar.open("Votre lien a été copié dans le presse papier !", undefined, { duration: 2000 } );
+        this.snackBar.open(" Your link has been copied to the clipboard !", undefined, { duration: 2000 } );
+    }
+
+    onShareSessionSpectatorClick(session: Session): void
+    {
+        this.clipboard.copy(location.origin + "/Session/" + session.uuid + "_SP");
+        this.snackBar.open("Your link spectator has been copied to the clipboard !", undefined, { duration: 2000 } );
     }
 
     refreshSessions()
