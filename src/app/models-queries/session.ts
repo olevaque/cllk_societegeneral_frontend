@@ -15,6 +15,7 @@ export interface Session
     name: string;
     animator: User;
     rates: Rate[];
+    currentScene: number;
 
     isVersionA: boolean;
     isSessionStarted: boolean;
@@ -46,6 +47,7 @@ query Sessions($filter: JSON!)
         isGameStarted
         isGameCompleted
         gameStartTime
+        currentScene
         
         animator
         {

@@ -70,9 +70,8 @@
                             <div class="overflow-ellipsis sess-name d-flex flex-row justify-content-center align-items-center">{{ session.name ? session.name : '-' }}</div>
                             <div class="overflow-ellipsis sess-version d-flex flex-row justify-content-center align-items-center">{{ session.isVersionA ? 'Version A' : 'Version B' }}</div>
                             <div class="overflow-ellipsis typo-standard-black sess-control">
-                                <img *ngIf="!session.isSessionStarted && !session.isGameCompleted" class="picto-std" src="assets/images/Play.png" (click)="onStartSessionClick(session.id)" />
-                                <div *ngIf="session.isGameCompleted">Terminé</div>
-                                <div *ngIf="session.isSessionStarted && !session.isGameCompleted">En cours</div>
+                                <div *ngIf="session.currentScene === 4">Terminé</div>
+                                <div *ngIf="session.currentScene !== 4">En cours</div>
                             </div>
                             <div class="sess-icons">
                                 <img class="picto-std" src="assets/images/Share.png" (click)="onShareSessionClick(session)" />
@@ -80,7 +79,7 @@
                             </div>
             
                         </div>
-            
+                        
                     </div>
                     <!--<div [attr.id]="'collapse' + i" class="collapse" data-bs-parent="#accordion-session">
                         <div class="d-flex flex-column align-items-center text-center pb-2">
